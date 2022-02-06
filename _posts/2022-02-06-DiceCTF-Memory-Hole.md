@@ -7,7 +7,7 @@ categories: jekyll update
 
 ## 0x00 Introduction
 
-In this challenge, we need to exploit V8 JavaScript engine with heap sandbox enabled. The bug is very simple: an array OOB. We bypass the sandbox by rewriting `code` field of function object, so that we can control the low 32 bits of `rip` register. We write the shellcode as double floating point immediate numbers in function and compile this function using JIT, and and set `rip` to address of the shellcode to execute `execve`.
+In this challenge, we need to exploit V8 JavaScript engine with heap sandbox enabled. The bug is very simple: an array OOB. We bypass the sandbox by rewriting `code` field of function object, so that we can control the low 32 bits of `rip` register. We write the shellcode as double floating point immediate numbers in function and compile this function using JIT, and set `rip` to address of the shellcode to execute `execve`.
 
 ## 0x01 Sandbox Overview
 
